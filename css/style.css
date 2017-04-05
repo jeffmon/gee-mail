@@ -28,6 +28,10 @@ body{
   padding:10px;
   background-color:#f2f2f2;
   float:middle;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  text-align:left;
+  margin-top:30px;
 
 
 }
@@ -63,5 +67,8 @@ div#titleTop.gDate{
 
 #title{
   font-family: 'Russo One', sans-serif;
+  color:red;
+  font-size:68px;
+  margin:20px;
 
 }
