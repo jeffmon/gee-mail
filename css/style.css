@@ -1,20 +1,24 @@
 .gSender{
   float:left;
   display:block;
+  background-color:#8FBC8F;
 }
 
 .gSubject{
   display:inline-block;
+  background-color:#008B8B;
 }
 
 .gDate{
   display:block;
   float:right;
   display:inline-block;
+  background-color:#8B0000;
 }
 
 .gBody{
   display:none;
+  background-color:#7B68EE;
 }
 
 .mainBox{
@@ -22,5 +26,6 @@
   margin:0 auto;
   display:inline-block;
   text-align:center;
+  background-color:#A9A9A9;
 
 }

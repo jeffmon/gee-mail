@@ -7,25 +7,7 @@
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
 
-/*var newMsg = getNewMessage();
 
-var createDate = document.createElement("p");
-createDate.id = "newDate";
-createDate.innerHTML = newMsg.date
-messages.appendChild(createDate);
-
-
-var createMsg = document.createElement("p");
-createMsg.id = "newMessage";
-createMsg.innerHTML = newMsg.subject
-createDate.appendChild(createMsg);
-
-var createBody = document.createElement("p");
-createBody.id = "newBody";
-createBody.innerHTML = newMsg.body
-createDate.appendChild(createBody);
-
-console.log(geemails.length);*/
 
 var targetMessages = document.getElementById("messages")
 
@@ -57,6 +39,44 @@ function createGmail(mail){
 
 createGmail(geemails)
 
+
+
+
+
+
+/*var targetMessages = document.getElementById("messages")*/
+
+function addMessageBottom(){
+  var createMainBox = document.createElement("div");
+  createMainBox.className = "mainBox";
+  targetMessages.appendChild(createMainBox);
+
+  var addNewMessage = getNewMessage();
+
+  var addMessageSender = document.createElement("div");
+  addMessageSender.className = "gSender";
+  addMessageSender.innerHTML = addNewMessage.sender;
+  createMainBox.appendChild(addMessageSender);
+
+  var addMessageSub = document.createElement("div");
+  addMessageSub.className = "gSubject";
+  addMessageSub.innerHTML = addNewMessage.subject;
+  createMainBox.appendChild(addMessageSub);
+
+  var addMessageDate = document.createElement("div");
+  addMessageDate.className = "gDate";
+  addMessageDate.innerHTML = addNewMessage.date;
+  createMainBox.appendChild(addMessageDate);
+
+  var addMessageBody = document.createElement("div");
+  addMessageBody.className = "gBody";
+  addMessageBody.innerHTML = addNewMessage.subject;
+  createMainBox.appendChild(addMessageBody);
+}
+
+
+
+
 var targetMainBox = document.getElementsByClassName("mainBox");
 for(var i = 0; i<targetMainBox.length; i++){
   targetMainBox[i].addEventListener("click", showBody);
@@ -70,6 +90,15 @@ function showBody(){
     getBody.style.display = "none";
   }
 }
+
+function addClick(){
+  for(var i = 0; i<targetMainBox.lenght; i++){
+    targetMainBox[i].addEventListener("click", showBody);
+  }
+}
+
+setInterval(addMessageBottom, 3000);
+setInterval(addClick, 3000);
 
 
 
