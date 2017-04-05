@@ -6,9 +6,73 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        messages.addEventListener("click", geemails);
 
-        
+/*var newMsg = getNewMessage();
+
+var createDate = document.createElement("p");
+createDate.id = "newDate";
+createDate.innerHTML = newMsg.date
+messages.appendChild(createDate);
+
+
+var createMsg = document.createElement("p");
+createMsg.id = "newMessage";
+createMsg.innerHTML = newMsg.subject
+createDate.appendChild(createMsg);
+
+var createBody = document.createElement("p");
+createBody.id = "newBody";
+createBody.innerHTML = newMsg.body
+createDate.appendChild(createBody);
+
+console.log(geemails.length);*/
+
+var targetMessages = document.getElementById("messages")
+
+
+
+function createGmail(mail){
+  for(var i = 0; i<mail.length; i++){
+    var createMainBox = document.createElement("div");
+    createMainBox.className = "mainBox";
+    targetMessages.appendChild(createMainBox);
+    var createSender = document.createElement("div");
+    createSender.className = "gSender";
+    createSender.innerHTML = mail[i].sender;
+    createMainBox.appendChild(createSender);
+    var createSubject = document.createElement("div");
+    createSubject.className = "gSubject";
+    createSubject.innerHTML = mail[i].subject;
+    createMainBox.appendChild(createSubject);
+    var createDate = document.createElement("div");
+    createDate.className = "gDate";
+    createDate.innerHTML = mail[i].date;
+    createMainBox.appendChild(createDate);
+    var createBody = document.createElement("div");
+    createBody.className = "gBody";
+    createBody.innerHTML = mail[i].body;
+    createMainBox.appendChild(createBody);
+  }
+}
+
+createGmail(geemails)
+
+var targetMainBox = document.getElementsByClassName("mainBox");
+for(var i = 0; i<targetMainBox.length; i++){
+  targetMainBox[i].addEventListener("click", showBody);
+}
+
+function showBody(){
+  var getBody = this.querySelectorAll(".gBody")[0];
+  if(getBody.style.display === "none"){
+    getBody.style.display = "block";
+  }else{
+    getBody.style.display = "none";
+  }
+}
+
+
+
 
 
 
@@ -23,11 +87,10 @@
 
 		<div id="main">
 		  <h1 id="title">Gee-Mail</h1>
-      <nav id="menu">Inbox
       
       </nav>
 
-      <div id="messages">Messages
+      <div id="messages">
         
 
       </div>
