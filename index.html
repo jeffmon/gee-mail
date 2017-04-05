@@ -1,6 +1,8 @@
 <html>
 	<head>
 		<script src="js/mail-generator.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Russo+One" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
       window.onload = function(){
@@ -10,6 +12,33 @@
 
 
 var targetMessages = document.getElementById("messages")
+
+function createTitles(){
+  var createMainBox = document.createElement("div");
+  createMainBox.className = "mainBox";
+  targetMessages.appendChild(createMainBox);
+
+  var createSender = document.createElement("div");
+  createSender.className = "gSender";
+  createSender.id = "titleTop";
+  createSender.innerHTML = "From";
+  createMainBox.appendChild(createSender);
+
+  var createSubject = document.createElement("div");
+  createSubject.className = "gSubject";
+  createSubject.id = "titleTop";
+  createSubject.innerHTML = "Subject";
+  createMainBox.appendChild(createSubject);
+
+  var createDate = document.createElement("div");
+  createDate.className = "gDate";
+  createDate.id = "titleTop";
+  createDate.innerHTML = "Date";
+  createMainBox.appendChild(createDate);
+
+}
+
+createTitles();
 
 
 
@@ -47,10 +76,6 @@ createGmail(geemails)
 
 
 
-
-
-/*var targetMessages = document.getElementById("messages")*/
-
 function addMessageBottom(){
   var createMainBox = document.createElement("div");
   createMainBox.className = "mainBox";
@@ -79,7 +104,7 @@ function addMessageBottom(){
 
   var addMessageBody = document.createElement("div");
   addMessageBody.className = "gBody";
-  addMessageBody.innerHTML = addNewMessage.subject;
+  addMessageBody.innerHTML = addNewMessage.body;
   createMainBox.appendChild(addMessageBody);
 }
 
