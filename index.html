@@ -18,6 +18,11 @@ function createGmail(mail){
     var createMainBox = document.createElement("div");
     createMainBox.className = "mainBox";
     targetMessages.appendChild(createMainBox);
+
+    var createLine = document.createElement("HR");
+    createLine.id = "line"
+    createMainBox.appendChild(createLine);
+
     var createSender = document.createElement("div");
     createSender.className = "gSender";
     createSender.innerHTML = mail[i].sender;
@@ -51,6 +56,10 @@ function addMessageBottom(){
   createMainBox.className = "mainBox";
   targetMessages.appendChild(createMainBox);
 
+  var createLine = document.createElement("HR");
+  createLine.id = "line"
+  createMainBox.appendChild(createLine);
+
   var addNewMessage = getNewMessage();
 
   var addMessageSender = document.createElement("div");
@@ -76,7 +85,6 @@ function addMessageBottom(){
 
 
 
-
 var targetMainBox = document.getElementsByClassName("mainBox");
 for(var i = 0; i<targetMainBox.length; i++){
   targetMainBox[i].addEventListener("click", showBody);
@@ -92,7 +100,7 @@ function showBody(){
 }
 
 function addClick(){
-  for(var i = 0; i<targetMainBox.lenght; i++){
+  for(var i = 0; i<targetMainBox.length; i++){
     targetMainBox[i].addEventListener("click", showBody);
   }
 }
@@ -101,6 +109,17 @@ setInterval(addMessageBottom, 3000);
 setInterval(addClick, 3000);
 
 
+
+var createInboxCount = document.getElementById("inboxCount");
+createInboxCount.innerHTML = "Inbox: 10";
+
+
+function inboxCounter(){
+  var createInboxCount = document.getElementById("inboxCount");
+  createInboxCount.innerHTML = "Inbox: " + targetMainBox.length;
+}
+
+setInterval(inboxCounter, 3000);
 
 
 
@@ -113,9 +132,12 @@ setInterval(addClick, 3000);
     </script>
 	</head>
 	<body>
+      <h1 id="title">Gee-Mail</h1>
+        <div class="inboxDiv"></div>
+        <p id="inboxCount"></p>
 
-		<div id="main">
-		  <h1 id="title">Gee-Mail</h1>
+		  <div id="main">
+
       
       </nav>
 
