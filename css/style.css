@@ -45,8 +45,11 @@ body{
   margin:0 auto;
   display:inline-block;
   text-align:center;
+}
 
-
+.mainBox:hover{
+  opacity:.75;
+  cursor:pointer;
 }
 
 .inboxDiv{
@@ -60,6 +63,11 @@ body{
   font-size:30px;
 }
 
+#titleTop:hover{
+  opacity:1;
+  cursor:default;
+}
+
 div#titleTop.gDate{
   margin-right:260px;
 }
@@ -70,5 +78,4 @@ div#titleTop.gDate{
   color:red;
   font-size:68px;
   margin:20px;
-
 }
