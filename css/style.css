@@ -59,8 +59,9 @@ body{
 
 #titleTop{
   color:red;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Bangers', cursive;
   font-size:30px;
+  text-shadow: 1px 1px black;
 }
 
 #titleTop:hover{
@@ -74,8 +75,9 @@ div#titleTop.gDate{
 
 
 #title{
-  font-family: 'Russo One', sans-serif;
+  font-family: 'Bangers', cursive;
   color:red;
-  font-size:68px;
-  margin:20px;
+  font-size:80px;
+  text-shadow: 2px 2px black;
+  margin-top:40px;
 }
